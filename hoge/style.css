@@ -14,6 +14,39 @@ li{
 ul{
   list-style:none;
 }
+
+table.simple {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	border-left: 1px solid #ccc;
+}
+
+table.simple thead th {
+	padding: 10px;
+	font-weight: bold;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 2px solid #c00;
+	background: green;
+}
+table.simple tbody th {
+	width: 150px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background: green;
+}
+table.simple td {
+	width: 350px;
+	padding: 10px;
+	vertical-align: top;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
 nav ul{
 
     width: 60%;
@@ -102,4 +135,8 @@ nav li:hover{
     background-position: center;
     background-size: auto 90%;
     background-repeat: no-repeat;
+}
+.touka{
+  background: rgba(255,255,255,0.3);
+
 }

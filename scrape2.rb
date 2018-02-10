@@ -18,20 +18,12 @@ p url2
 
 charset = nil
 
-html = open(url1) do |f|
-    charset = f.charset
-    p "Sites Encoding : #{charset}" # サイトの文字コードを確認
-    f.read
-end
-
-html2 = open(url2) do |f|
-    charset = f.charset
-    p "Sites Encoding : #{charset}" # サイトの文字コードを確認
-    f.read
-end
+html = open(url1).read
+html2 = open(url2).read
 
 rikunabi = []
 rikunabi2 = []
+
 doc = Nokogiri::HTML.parse(html, url1)
 doc.xpath('//h2[@class="ts-p-_cassette-title"]').each do |node|
   rikunabi.push(node.css('a').inner_text)
@@ -51,3 +43,15 @@ p '配列 length'
 p rikunabi.length
 p 'ーーーーーーーーーーーーーーーーーーーーーー'
 p rikunabi2.length
+
+
+result = []
+rikunabi.map do |item1|
+  rikunabi2.map do |item2|
+    if (item1 == item2) then
+      result.push(item2)
+    end
+  end
+end
+
+p result
